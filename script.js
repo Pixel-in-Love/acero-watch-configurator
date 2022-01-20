@@ -1,6 +1,10 @@
 let swiper;
+let selectedCorrea = '';
+let selectedEsfera = '';
 const setEsfera = (esferaContainer, esfera, idx) => {
   const img = document.createElement('img');
+  const esferaName = document.querySelector('.esfera-name');
+  esferaName.textContent = esfera.name;
   img.src = `assets/esferas/${esfera.fileName}`;
   img.alt = esfera.name;
   img.classList.add('esfera-img');
@@ -13,7 +17,26 @@ const setEsfera = (esferaContainer, esfera, idx) => {
     } else {
       item.classList.remove('selected');
     }
-  })
+  });
+
+  setBuyLink(null, esfera.id);
+}
+
+const setCorrea = (correa) => {
+  const correaName = document.querySelector('.correa-name');
+  correaName.textContent = correa.name;
+  setBuyLink(correa.id);
+}
+
+const setBuyLink = (correa, esfera) => {
+  const buyLink = document.querySelector('.buy-link');
+  if(correa) {
+    selectedCorrea = correa;
+  }
+  if(esfera) {
+    selectedEsfera = esfera;
+  }
+  buyLink.href = `https://buy-link.com/product/${selectedCorrea}/${selectedEsfera}`;
 }
 
 const initialize = (data) => {
@@ -42,12 +65,18 @@ const initialize = (data) => {
     selector.appendChild(item);
   })
   setEsfera(esferaContainer, data.esferas[0], 0);
+  setCorrea(data.correas[0]);
+  setBuyLink(data.correas[0].id, data.esferas[0].id);
   swiper = new Swiper(".mySwiper", {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
   });
+
+  swiper.on('slideChange', (e) => {
+    setCorrea(data.correas[e.realIndex])
+  })
 }
 
 fetch('./assets/data.json')

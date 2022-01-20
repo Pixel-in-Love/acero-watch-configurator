@@ -1,11 +1,11 @@
 {
   "esferas": [
-    {"name": "Esfera 1", "fileName": "esfera1.png"},
-    {"name": "Esfera 2", "fileName": "esfera2.png"},
-    {"name": "Esfera 3", "fileName": "esfera3.png"}
+    {"name": "Esfera 1", "fileName": "esfera1.png", "id": "esfera1"},
+    {"name": "Esfera 2", "fileName": "esfera2.png", "id": "esfera2"},
+    {"name": "Esfera 3", "fileName": "esfera3.png", "id": "esfera3"}
   ],
   "correas": [
-    {"name": "Correa 1", "fileName": "correa1.jpg"},
-    {"name": "Correa 2", "fileName": "correa2.jpg"}
+    {"name": "Correa 1", "fileName": "correa1.jpg", "id": "correa1"},
+    {"name": "Correa 2", "fileName": "correa2.jpg", "id": "correa2"}
   ]
 }
