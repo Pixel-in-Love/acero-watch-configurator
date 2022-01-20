@@ -1,0 +1,11 @@
+{
+  "esferas": [
+    {"name": "Esfera 1", "fileName": "esfera1.png"},
+    {"name": "Esfera 2", "fileName": "esfera2.png"},
+    {"name": "Esfera 3", "fileName": "esfera3.png"}
+  ],
+  "correas": [
+    {"name": "Correa 1", "fileName": "correa1.jpg"},
+    {"name": "Correa 2", "fileName": "correa2.jpg"}
+  ]
+}
